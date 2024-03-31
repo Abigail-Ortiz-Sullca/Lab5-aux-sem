@@ -1,78 +1,79 @@
 (() => {
-
-  /* NOMBRE CORRECTAMETE LAS SIGUIENTES VARIABLES 
-     ADEMAS DE COMPROBAR SI USA LET O CONST,
-    SE PUEDE REFACTORIZAR, ETC.
-  */
-
-  //lista de emails de usuarios de Meta-X
-  const l: Array<string> = [
+  // Lista de emails de usuarios de Meta-X
+  const userEmails = [
     "email1@gmail.com", 
-    "email1@gmail.com", 
-    "email1@gmail.com"
+    "email2@gmail.com", 
+    "email3@gmail.com"
   ];
+  console.log(userEmails);
 
-  console.log(l);
-
-  //Lista de compras de un carrito
-  const var2: Array<Object> = [
+  // Lista de compras de un carrito
+  const shoppingCart = [
     {product: "switch"},
     {product: "X-box Controller"},
     {product: "steam-gift-card"},
   ];
-
-  console.log(var2);
+  console.log(shoppingCart);
   
-
-  //funcion para sumar mas 3 a un numero y retornarlo
-  const fff = (asdfg: number): number => {
-    return asdfg + 3;
+  // Función para sumar 3 a un número y retornarlo
+  const addThree = (num: number): number => {
+    return num + 3;
   }
 
-  console.log(fff(2));
+  console.log(addThree(2));
   
-  
-  //funcion para capitalizar una palabra pasara por params
-  //idente o refactorice de ser necesario
-  //el resultado no deberia cambiar
-  function capi(w: string): string {
-    w.toLowerCase();    
-    const c = w.charAt(0).toUpperCase().toString().concat(w.substring(1, w.length));
-    return c;
+  // Función para capitalizar una palabra pasada por parámetros
+  const capitalize = (word: string): string => {
+    const lowerCaseWord = word.toLowerCase();    
+    const capitalizedWord = lowerCaseWord.charAt(0).toUpperCase() + lowerCaseWord.slice(1);
+    return capitalizedWord;
+  }
+  console.log(capitalize("capricorn"));
+
+  // Variable que alerta en caso de que algún evento suceda
+  let alertEvent = false;
+
+  function handleEvent() {
+    let button = document.getElementById('myButton');
+    if (button) {
+        button.addEventListener('click', () => {
+            alertEvent = true;
+            console.log('¡Alerta! El evento ha ocurrido.');
+        });
+    }
+  }
+  handleEvent();
+
+  // Variable que se encarga de verificar si un usuario puede acceder o no
+  const canAccess = true;
+  function welcomeUser(canAccess: boolean) {
+    if(canAccess) {
+      console.log('Welcome');
+    } else {
+      console.log('Access denied');
+    }
+  }
+  welcomeUser(canAccess);
+
+  // Función para hallar el promedio de 3 números
+  function calculateAverage(num1: number, num2: number, num3: number): number {
+    let sum = num1 + num2 + num3; 
+    let average = sum / 3; 
+    return average; 
   }
 
-  console.log(capi("capricorn"));
-  
-  //variable que alerta en caso de que algun evento suceda
-  let www: boolean = false;
+  let average = calculateAverage(10, 20, 30);
+  console.log(`El promedio es ${average}.`);
 
-  if(www) console.log('event');
+  // Variable que almacena el valor de PI
+  const PI = 3.141592653589793;
+  console.log(`El valor de PI es ${PI}.`);
 
-  //variable que se encarga de verificar 
-  //si un usuario puede acceder o no
-  let c: boolean = true;
+  // Variable que controla si un archivo es modificable 
+  const isFileEditable = false;
+  if(isFileEditable) console.log('edit this file?');
 
-  if(c) console.log('welcome');
-  
-
-  //variable para hallar el promedio de 3 numeros
-  const sudo: number = (1 + 2 + 3) / 3;
-
-  console.log(sudo);
-  
-  //variable que almacena el valor de PI
-  let pizza: number = 3.141592654;
-
-  console.log(pizza);
-  
-
-  //variabel que controla si un archivo es modificable 
-  let Bv: boolean = false;
-
-  if(Bv) console.log('edit this file?');
-  
-  //variable para almacenar el valor de e
-  const eioua: number = 2.718281828; 
-
-
+  // Variable para almacenar el valor de e
+  const e = Math.E;
+  console.log(e);
 })();

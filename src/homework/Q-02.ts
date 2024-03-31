@@ -1,30 +1,30 @@
 (() => {
+  // Las clases deben usar PascalCase
+  class WordToWord {}
 
-  /* Haz uso de nomenclaturas correctas en la variables
-     mantener los nombres dados
-  */
- 
+  // Las interfaces en TypeScript deben usar PascalCase
+  interface Props {}
 
-  class word_to_word {}
+  // Los tipos en TypeScript deben usar PascalCase
+  type Moves = {}
 
-  interface props {}
+  // Las funciones deben usar camelCase y ser descriptivas
+  function getFood() {}
 
-  type moves = {}
+  // Las funciones deben usar camelCase y ser descriptivas
+  function setProductName() {}
 
-  function GET_FOOD() {}
+  // Los tipos en deben usar PascalCase
+  type Directions = {}
 
-  function SETPRODUCTNAME() {}
+  // Las interfaces deben usar PascalCase
+  interface IDbProps {}
 
-  type directions = {}
+  // Las clases deben usar PascalCase
+  class AToBToC {}
 
-  interface IDBPROPS {}
+  // Las constantes deben estar en mayúsculas con guiones bajos
+  const CONSTANT_ONE = 3;
 
-  class ATOBTOC {}
-
-  // los 2 valores siguientes son constantes.
-
-  const constant_one = 3;
-
-  let constant_two = 4;
-
+  const CONSTANT_TWO = 4;
 })();

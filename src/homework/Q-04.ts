@@ -1,40 +1,45 @@
-(() => {
-
-  /* APLICA DRY */
-  
-  //EX - 1
-  
-  function calculateOperation1(a: number, b: number, c: number): number {
+(() => { //EX - 1
+  function calculateOperation(a: number, b: number, c: number): number {
     let sumResult = a + b;
     let multiplicationResult = sumResult * c;
     return multiplicationResult;
   }
 
-  function calculateOperation2(x: number, y: number, z: number): number {
-    let sumResult = x + y;
-    let multiplicationResult = sumResult * z;
-    return multiplicationResult;
-  }
+  let operation1Result = calculateOperation(1, 2, 3);
+  console.log(`Operation 1 Result: ${operation1Result}`);
+  let operation2Result = calculateOperation(4, 5, 6);
+  console.log(`Operation 2 Result: ${operation2Result}`);
 
   // EX - 2
-  function calculateRectangleArea(length: number, width: number): number {
-    return length * width;
+  function calculateArea(shape: string, dimension1: number, dimension2?: number): number {
+    if (shape === 'rectangle') {
+      return dimension1 * (dimension2 || 0);
+    } else if (shape === 'circle') {
+      return Math.PI * dimension1 * dimension1;
+    } else {
+      return 0;
+    }
   }
 
-  function calculateCircleArea(radius: number): number {
-    return Math.PI * radius * radius;
-  }
+  let rectangleArea = calculateArea('rectangle', 5, 6);
+  console.log(`Rectangle Area: ${rectangleArea}`);
+  let circleArea = calculateArea('circle', 7);
+  console.log(`Circle Area: ${circleArea}`);
 
   // EX - 3
-  //No es necesario aumentar codigo en este ejercicio
-  function validateEmail(email: string): boolean {
-    //...some code for validate here
-    return false;
-  }
+  function validate(input: string, type: string): boolean {
 
-  function validateUsername(username: string): boolean {
-    //...some code for validate here
-    return false;
-  }
+    if (type === 'email') {
+      return input.includes('@');
+    } else if (type === 'username') {
+      return input.length >= 5;
+    } else {
+      return false;
+    }
+}
 
+  let isEmailValid = validate('test@example.com', 'email');
+  console.log(`Is Email Valid: ${isEmailValid}`);
+  let isUsernameValid = validate('testUser', 'username');
+  console.log(`Is Username Valid: ${isUsernameValid}`);
 })();
