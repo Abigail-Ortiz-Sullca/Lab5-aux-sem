@@ -15,4 +15,3 @@ Los clientes no deben ser forzados a depender de interfaces que no utilizan.
 
 ### 5. Principio de Inversión de Dependencias (DIP)
 Depende de abstracciones, no de concreciones.
-s
